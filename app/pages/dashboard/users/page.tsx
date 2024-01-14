@@ -1,6 +1,6 @@
 'use client';
-import Search from '@/app/components/search/Search';
-import Table from '@/app/components/table/Table';
+import Search from '@/app/components/Search/Search';
+import Table from '@/app/components/UsersTable/UsersTable';
 import { User, getUsers } from '@/app/services/getUsers';
 import { useState } from 'react';
 
