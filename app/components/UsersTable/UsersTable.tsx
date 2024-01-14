@@ -21,10 +21,15 @@ import { useState } from 'react';
 
 interface UsersTableProps {
   users: User[];
-  setUsers: React.Dispatch<React.SetStateAction<User[]>>;
+  onAddUser: (newUser: User) => void;
+  onDeleteUser: (email: string) => void;
 }
 
-export default function UsersTable({ users, setUsers }: UsersTableProps) {
+export default function UsersTable({
+  users,
+  onAddUser,
+  onDeleteUser,
+}: UsersTableProps) {
   const [newUser, setNewUser] = useState<User>({
     name: '',
     email: '',
@@ -48,14 +53,12 @@ export default function UsersTable({ users, setUsers }: UsersTableProps) {
 
   const addUser = () => {
     const userToAdd = { ...newUser, added: new Date().toISOString() };
-    setUsers((prevUsers: User[]) => [...prevUsers, userToAdd]);
+    onAddUser(userToAdd);
     setNewUser({ name: '', email: '', company: '', added: '' });
   };
 
   const deleteUser = (email: string) => {
-    setUsers((prevUsers: User[]) =>
-      prevUsers.filter((user) => user.email !== email),
-    );
+    onDeleteUser(email);
   };
 
   return (

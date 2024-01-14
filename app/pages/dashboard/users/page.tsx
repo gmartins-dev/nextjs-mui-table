@@ -1,5 +1,4 @@
 'use client';
-import Search from '@/app/components/Search/Search';
 import UsersTable from '@/app/components/UsersTable/UsersTable';
 
 import { User, getUsers } from '@/app/services/getUsers';
@@ -14,29 +13,24 @@ export default function Users() {
     getUsers(setUsers, setIsLoading, setError);
   }, []);
 
-  const addUser = (newUser: User) => {
-    const userToAdd = { ...newUser, added: new Date().toISOString() };
-    console.log('Adding user:', userToAdd);
-    setUsers((prevUsers: User[]) => {
-      console.log('Current users:', prevUsers);
-      const updatedUsers = [...prevUsers, userToAdd];
-      console.log('Updated users:', updatedUsers);
-      return updatedUsers;
-    });
+  const handleAddUser = (newUser: User) => {
+    setUsers((prevUsers: User[]) => [...prevUsers, newUser]);
   };
 
-  const deleteUser = (index: number) => {
-    setUsers((prevUsers) => prevUsers.filter((user, i) => i !== index));
+  const handleDeleteUser = (email: string) => {
+    setUsers((prevUsers: User[]) =>
+      prevUsers.filter((user) => user.email !== email),
+    );
   };
 
   if (isLoading) return <p>Loading users...</p>;
   if (error) return <p>An error has occurred: {error.message}</p>;
 
   return (
-    <div>
-      <h1>Users Page</h1>
-      <Search />
-      <UsersTable users={users} addUser={addUser} deleteUser={deleteUser} />
-    </div>
+    <UsersTable
+      users={users}
+      onAddUser={handleAddUser}
+      onDeleteUser={handleDeleteUser}
+    />
   );
 }
