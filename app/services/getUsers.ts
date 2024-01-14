@@ -14,7 +14,9 @@ export async function getUsers(
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(
+        `Failed to fetch users: ${response.status} ${response.statusText}`,
+      );
     }
     const data: User[] = await response.json();
     setUsers(data);
