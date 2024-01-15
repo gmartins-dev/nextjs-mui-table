@@ -22,23 +22,17 @@ The project has the following structure:
 
 ## Getting Started
 
-To get started with the development server, run:
-
 1. **Clone the Repository**
 
-Open your terminal and use the `git clone` command to clone the repository:
+Use the `git clone` command to clone the repository:
 
-  ```bash
-  git clone https://github.com/gmartins-dev/nextjs-mui-table
-    ```
+`git clone https://github.com/gmartins-dev/nextjs-mui-table`
 
 2. **Navigate to the Project Directory**
 
-Use the cd command to navigate into the project directory:
+Use the `cd` command to navigate into the project directory:
 
-  ```bash
-  cd nextjs-mui-table
-    ```
+`cd nextjs-mui-table`
 
 3. **Install Dependencies**
 
@@ -48,4 +42,4 @@ Use the `npm install` command to install the project's dependencies:
 
 Use the `npm run dev` command to start the development server:
 
-The project should now be running at http://localhost:3000.
+The project should now be running at <http://localhost:3000>.
