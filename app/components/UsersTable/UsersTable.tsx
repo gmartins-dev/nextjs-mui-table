@@ -52,7 +52,10 @@ export default function UsersTable({
     };
 
   const addUser = () => {
-    const userToAdd = { ...newUser, added: new Date().toISOString() };
+    const userToAdd = {
+      ...newUser,
+      added: new Date().toISOString().split('T')[0],
+    };
     onAddUser(userToAdd);
     setNewUser({ name: '', email: '', company: '', added: '' });
   };
