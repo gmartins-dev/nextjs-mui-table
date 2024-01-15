@@ -109,7 +109,7 @@ export default function UsersTable({
               <TableRow key={index}>
                 <TableCell>
                   <Stack alignItems='center' direction='row' spacing={2}>
-                    <Avatar className='mr-2'>{getInitials(user.name)}</Avatar>
+                    <Avatar>{getInitials(user.name)}</Avatar>
                     <Typography variant='subtitle2'>{user.name}</Typography>
                   </Stack>
                 </TableCell>
@@ -119,7 +119,7 @@ export default function UsersTable({
                 <TableCell>
                   <Button
                     variant='contained'
-                    color='secondary'
+                    color='error'
                     onClick={() => onDeleteUser(user.email)}
                   >
                     Delete
