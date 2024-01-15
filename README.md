@@ -2,6 +2,9 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's a dashboard application that displays user data in a table format.
 
+## Online demonstration:
+https://nextjs-mui-table-gmartinsdev.vercel.app
+
 ## Project Structure
 
 The project has the following structure:
